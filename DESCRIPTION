@@ -1,0 +1,8 @@
+Package: rGridMap
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Authors@R: person("Arvi", "Sreenivasan", email = "as4341@columbia.edu", role = c("aut", "cre"))
+Description: Tessselated hexagon grid maps for US states, with ggplot2
+Depends: R (>= 3.2.0)
+License: What license is it under?
+LazyData: true
