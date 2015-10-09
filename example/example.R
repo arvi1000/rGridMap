@@ -37,4 +37,4 @@ ex_gg <-
     scale_fill_brewer(palette = 4) +
     labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
 
-ggsave('example/example.svg', ex_gg, width = 5, height = 3)
+ggsave('example/example.png', ex_gg, width = 5, height = 3)
