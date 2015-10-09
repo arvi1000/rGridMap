@@ -48,9 +48,12 @@ plotGridMap <- function(x,
       size = 3, color = label_color)
   }
 
-  # tidy theme, and kill slashes in legend box
-  gg <- gg +
-    theme_hexmap() +
-    guides(fill = guide_legend(override.aes = list(colour = NULL)))
+  # for categorical data, kill slashes in legend box
+  if (class(plot_dat[, fill_var]) %in% c('character', 'factor')) {
+    gg <- gg +
+    guides(fill = guide_legend(override.aes = list(colour = NULL))) +
+    theme(legend.key = element_rect(colour = 'black'))
+  }
+
   return(gg)
 }

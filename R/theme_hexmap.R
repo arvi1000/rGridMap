@@ -7,8 +7,5 @@ theme_hexmap <- function() {
         axis.line = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_blank(),
-        axis.title = element_blank(),
-        
-        # need this so legend key still has boxes, after we nix the slashes
-        legend.key = element_rect(colour = 'black'))
+        axis.title = element_blank())
 }
