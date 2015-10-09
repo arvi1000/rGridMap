@@ -9,7 +9,6 @@ It is easy to use!
     my_dat <- data.frame(state.abb = c(state.abb, 'DC'), # don't forget DC!
                          value=sample(LETTERS[1:5], 51, replace=T))
 
-
     # build grid map plot
     my_grid_map <- plotGridMap(my_dat, fill_var = 'value', label_var = 'state.abb')
 
@@ -17,6 +16,4 @@ It is easy to use!
     my_grid_map +
      scale_fill_brewer(type='qual') +
      labs(title = 'States by Category', fill = 'Category')
-
-
 ![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.png)
