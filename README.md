@@ -17,4 +17,4 @@ It is easy to use!
      labs(title = 'States by Category', fill = 'Category')
 
 
-![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.svg)
+![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.png)
