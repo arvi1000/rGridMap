@@ -1,7 +1,7 @@
 # rGridMap
 An R Package for tessellated hexagon grid maps of US states in R + ggplot2
 
-Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html) by Danny DeBelius of the NPR visuals team and the tweet storm and Flowing Data covereage that followed.
+Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html) by Danny DeBelius of the NPR visuals team and the general 2015 tweet storm and [Flowing Data covereage](https://flowingdata.com/2015/05/12/the-great-grid-map-debate-of-2015/) of grid maps.
 
 It is easy to use!
 
