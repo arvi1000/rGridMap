@@ -29,7 +29,8 @@ Plots a filled grid map of US states, represented as hexagons
 my_dat <- data.frame(state.abb, value=sample(LETTERS[1:5], 50, replace=T))
 
 # build grid map plot
-my_grid_map <- plotGridMap(my_dat, fill_var = 'value', label_var = 'state.abb')
+my_dat <- data.frame(state.abb = c(state.abb, 'DC'),
+                     value=sample(LETTERS[1:5], 51, replace=T))
 
 # note you can manipulate the resultant object as you would any ggplot object
 my_grid_map +

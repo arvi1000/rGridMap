@@ -2,7 +2,8 @@ library(rGridMap)
 library(ggplot2)
 
 # a data.frame of states with random categorical value
-my_dat <- data.frame(state.abb, value=sample(LETTERS[1:5], 50, replace=T))
+my_dat <- data.frame(state.abb = c(state.abb, 'DC'),
+                     value=sample(LETTERS[1:5], 51, replace=T))
 
 # build grid map plot
 my_grid_map <- plotGridMap(my_dat, fill_var = 'value', label_var = 'state.abb')
@@ -16,4 +17,4 @@ my_grid_map +
            x=median(my_grid_map$layers[[1]]$data$draw_x), y=-3)
 
 
-ggsave('example/rGridMap_example.svg', width=8, height=6)
+ggsave('example/rGridMap_example.png', width=8, height=6)
