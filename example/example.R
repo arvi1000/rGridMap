@@ -1,6 +1,7 @@
 library(devtools)
 install_github('arvi1000/rGridMap')
 
+
 library(rGridMap)
 library(rvest)
 library(lubridate)
@@ -37,4 +38,4 @@ ex_gg <-
     scale_fill_brewer(palette = 4) +
     labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
 
-ggsave('example/example.png', ex_gg, width = 5, height = 3)
+ggsave('example/example.svg', ex_gg, width = 8, height = 6)
