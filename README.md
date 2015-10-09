@@ -6,7 +6,9 @@ Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.ht
 It is easy to use!
 
     # a data.frame of states with random categorical value
-    my_dat <- data.frame(state.abb, value=sample(LETTERS[1:5], 50, replace=T))
+    my_dat <- data.frame(state.abb = c(state.abb, 'DC'), # don't forget DC!
+                         value=sample(LETTERS[1:5], 51, replace=T))
+
 
     # build grid map plot
     my_grid_map <- plotGridMap(my_dat, fill_var = 'value', label_var = 'state.abb')
