@@ -32,6 +32,9 @@ plot_dat[, began_fac := cut(began,
 
 library(ggplot2)
 
-plotGridMap(plot_dat, fill_var = 'began_fac', label_var = 'label') +
-  scale_fill_brewer(palette = 4) +
-  labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
+ex_gg <-
+  plotGridMap(plot_dat, fill_var = 'began_fac', label_var = 'label') +
+    scale_fill_brewer(palette = 4) +
+    labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
+
+ggsave('example/example.svg', ex_gg, width = 5, height = 3)
