@@ -4,15 +4,17 @@
 \alias{plotGridMap}
 \title{Plots a filled grid map of US states, represented as hexagons}
 \usage{
-plotGridMap(x, fill_var, state_var = "state.abb", label_var = NULL,
-  label_color = "black")
+plotGridMap(x, state_var = "state.abb", fill_var, alpha_var = NULL,
+  label_var = NULL, label_color = "black")
 }
 \arguments{
 \item{x}{data.frame with data to plot}
 
+\item{state_var}{name of of column in \code{x} that contains state abbreviations (matching \code{base::state.abb()})}
+
 \item{fill_var}{column from \code{x} to use for color fill; can be numeric, factor, or character (treated as factor by ggplot)}
 
-\item{state_var}{name of of column in \code{x} that contains state abbreviations (matching \code{base::state.abb()})}
+\item{alpha_var}{column from \code{x} to use for fill alpha (NULL by default, for no alpha); can be numeric, factor, or character (treated as factor by ggplot)}
 
 \item{label_var}{name of of column in \code{x} to use for labels; if NULL, then no labels}
 

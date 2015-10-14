@@ -2,8 +2,9 @@
 #' Plots a filled grid map of US states, represented as hexagons
 #'
 #' @param x data.frame with data to plot
-#' @param fill_var column from \code{x} to use for color fill; can be numeric, factor, or character (treated as factor by ggplot)
 #' @param state_var name of of column in \code{x} that contains state abbreviations (matching \code{base::state.abb()})
+#' @param fill_var column from \code{x} to use for color fill; can be numeric, factor, or character (treated as factor by ggplot)
+#' @param alpha_var column from \code{x} to use for fill alpha (NULL by default, for no alpha); can be numeric, factor, or character (treated as factor by ggplot)
 #' @param label_var name of of column in \code{x} to use for labels; if NULL, then no labels
 #' @param label_color color for label text
 #'
@@ -27,7 +28,8 @@
 #'  labs(title = 'States by Category', fill = 'Category')
 
 plotGridMap <- function(x,
-                        fill_var, state_var = 'state.abb',
+                        state_var = 'state.abb',
+                        fill_var, alpha_var = NULL,
                         label_var = NULL, label_color = 'black') {
 
   plot_dat <-
