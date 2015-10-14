@@ -5,6 +5,8 @@ Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.ht
 
 It is easy to use!
 
+### A toy example
+
     # a data.frame of states with random categorical value
     my_dat <- data.frame(state.abb = c(state.abb, 'DC'), # don't forget DC!
                          value=sample(LETTERS[1:5], 51, replace=T))
@@ -17,3 +19,9 @@ It is easy to use!
      scale_fill_brewer(type='qual') +
      labs(title = 'States by Category', fill = 'Category')
 ![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.png)
+
+### An example with real data
+(See the examples folder for code)
+![](https://raw.github.com/arvi1000/rGridMap/master/example/senate_debut.png)
+
+
