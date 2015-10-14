@@ -1,11 +1,14 @@
-library(devtools)
-install_github('arvi1000/rGridMap')
-
+# If necessary:
+# library(devtools)
+# install_github('arvi1000/rGridMap')
 
 library(rGridMap)
 library(rvest)
 library(lubridate)
 library(data.table)
+library(ggplot2)
+
+## PART ONE: Organize data ----
 
 # scrape wiki table on US senators
 url <- 'https://en.wikipedia.org/wiki/List_of_current_United_States_Senators'
@@ -31,11 +34,17 @@ plot_dat[, began_fac := cut(began,
                             breaks = seq(1970, 2020, 10),
                             labels = paste0(seq(1970, 2010, 10), 's'))]
 
-library(ggplot2)
+## PART TWO: Make grid map ----
 
-ex_gg <-
+# build
+senate_debut_gg <-
   plotGridMap(plot_dat, fill_var = 'began_fac', label_var = 'label') +
     scale_fill_brewer(palette = 4) +
     labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
 
-ggsave('example/example.svg', ex_gg, width = 8, height = 6)
+# print
+senate_debut_gg
+
+# optional, save to file:
+ggsave('rGridMap/example/senate_debut.png', senate_debut_gg, width = 8, height = 6)
+
