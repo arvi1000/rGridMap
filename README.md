@@ -21,7 +21,7 @@ It is easy to use!
 ![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.png)
 
 ### An example with real data
-(See the examples folder for code)
+(See the [examples folder](https://github.com/arvi1000/rGridMap/blob/master/example/senate_debut_example.R) for code)
 ![](https://raw.github.com/arvi1000/rGridMap/master/example/senate_debut.png)
 
 
