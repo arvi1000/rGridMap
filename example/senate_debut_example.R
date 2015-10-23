@@ -30,15 +30,15 @@ plot_dat <-
 
 # make a label column
 plot_dat[, label:=paste0(state.abb, '\n', began)]
-plot_dat[, began_fac := cut(began,
-                            breaks = seq(1970, 2020, 10),
-                            labels = paste0(seq(1970, 2010, 10), 's'))]
+plot_dat[, began_decade := cut(began,
+                               breaks = seq(1970, 2020, 10),
+                               labels = paste0(seq(1970, 2010, 10), 's'))]
 
 ## PART TWO: Make grid map ----
 
 # build
 senate_debut_gg <-
-  plotGridMap(plot_dat, fill_var = 'began_fac', label_var = 'label') +
+  plotGridMap(plot_dat, fill_var = 'began_decade', label_var = 'label') +
     scale_fill_brewer(palette = 4) +
     labs(title ='Term Debut of Senior Senator, by State', fill = 'Decade')
 
