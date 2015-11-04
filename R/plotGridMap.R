@@ -5,8 +5,9 @@
 #' @param state_var name of of column in \code{x} that contains state abbreviations (matching \code{base::state.abb()})
 #' @param fill_var column from \code{x} to use for color fill; can be numeric, factor, or character (treated as factor by ggplot)
 #' @param alpha_var column from \code{x} to use for fill alpha (NULL by default, for no alpha); can be numeric, factor, or character (treated as factor by ggplot)
-#' @param label_var name of of column in \code{x} to use for labels; if NULL, then no labels
-#' @param label_color color for label text
+#' @param label_var name of column in \code{x} to use for labels; if NULL, then no labels
+#' @param label_color_var if NULL, then labels have a fixed color (specified by \code{label_color}). Otherwise, name of column in \code{x} to use for label color scale
+#' @param label_color color for label text. Has no effect if you pass a value to \code{label_color_var}
 #'
 #' @import ggplot2
 #'
@@ -30,7 +31,9 @@
 plotGridMap <- function(x,
                         state_var = 'state.abb',
                         fill_var, alpha_var = NULL,
-                        label_var = NULL, label_color = 'black') {
+                        label_var = state_var,
+                        label_color_var = NULL,
+                        label_color = 'black') {
 
   plot_dat <-
     merge.data.frame(x, getStateHexPoly(state_col = state_var), by = state_var)
@@ -44,11 +47,24 @@ plotGridMap <- function(x,
     ggplot2::coord_fixed() +
     theme_hexmap()
 
+  # add labels if called for
   if(!is.null(label_var)) {
-    gg <- gg + ggplot2::geom_text(
-      data = subset(plot_dat, order==1),
-      aes_string(x = 'lab_x',  y = 'lab_y', label = label_var),
-      size = 3, color = label_color)
+
+    if(is.null(label_color_var)) {
+      # if we are assigning a fixed color:
+      gg <- gg + ggplot2::geom_text(
+        data = subset(plot_dat, order==1),
+        aes_string(x = 'lab_x',  y = 'lab_y', label = label_var),
+        size = 3, color = label_color)
+    } else {
+
+      # if we are mapping color to a scale
+      gg <- gg + ggplot2::geom_text(
+        data = subset(plot_dat, order==1),
+        aes_string(x = 'lab_x',  y = 'lab_y',
+                   label = label_var, color = label_color_var),
+        size = 3)
+    }
   }
 
   # for categorical data, kill slashes in legend box

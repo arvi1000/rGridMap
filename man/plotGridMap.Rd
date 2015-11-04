@@ -5,7 +5,7 @@
 \title{Plots a filled grid map of US states, represented as hexagons}
 \usage{
 plotGridMap(x, state_var = "state.abb", fill_var, alpha_var = NULL,
-  label_var = NULL, label_color = "black")
+  label_var = NULL, label_color_var = NULL, label_color = "black")
 }
 \arguments{
 \item{x}{data.frame with data to plot}
@@ -16,9 +16,11 @@ plotGridMap(x, state_var = "state.abb", fill_var, alpha_var = NULL,
 
 \item{alpha_var}{column from \code{x} to use for fill alpha (NULL by default, for no alpha); can be numeric, factor, or character (treated as factor by ggplot)}
 
-\item{label_var}{name of of column in \code{x} to use for labels; if NULL, then no labels}
+\item{label_var}{name of column in \code{x} to use for labels; if NULL, then no labels}
 
-\item{label_color}{color for label text}
+\item{label_color_var}{if NULL, then labels have a fixed color (specified by \code{label_color}). Otherwise, name of column in \code{x} to use for label color scale}
+
+\item{label_color}{color for label text. Has no effect if you pass a value to \code{label_color_var}}
 }
 \value{
 Returns a ggplot
