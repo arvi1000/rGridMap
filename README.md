@@ -5,6 +5,13 @@ Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.ht
 
 It is easy to use!
 
+### Installation
+
+Use install_github from the devtools package
+
+    library(devtools)
+    install_github('arvi1000/rGridMap')
+
 ### A toy example
 
     # a data.frame of states with random categorical value
