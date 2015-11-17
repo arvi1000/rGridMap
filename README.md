@@ -19,7 +19,7 @@ Use install_github from the devtools package
                          value=sample(LETTERS[1:5], 51, replace=T))
 
     # build grid map plot
-    my_grid_map <- plotGridMap(my_dat, fill_var = 'value', label_var = 'state.abb')
+    my_grid_map <- plotGridMap(my_dat, fill_var = 'value')
 
     # and you can manipulate the resultant object as you would any ggplot object
     my_grid_map +
