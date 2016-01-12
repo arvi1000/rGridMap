@@ -5,10 +5,6 @@ Inspired by the [blog post](http://blog.apps.npr.org/2015/05/11/hex-tile-maps.ht
 
 It is easy to use!
 
-### Warning!
-
-*The newest version of ggplot (2.0.0) breaks this package (I think because `geom_polygon` no longer accepts mapping `order`). Fix to come later*
-
 ### Installation
 
 Use install_github from the devtools package
