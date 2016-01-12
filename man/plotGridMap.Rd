@@ -5,7 +5,7 @@
 \title{Plots a filled grid map of US states, represented as hexagons}
 \usage{
 plotGridMap(x, state_var = "state.abb", fill_var, alpha_var = NULL,
-  label_var = NULL, label_color_var = NULL, label_color = "black")
+  label_var = state_var, label_color_var = NULL, label_color = "black")
 }
 \arguments{
 \item{x}{data.frame with data to plot}
