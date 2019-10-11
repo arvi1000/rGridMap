@@ -25,10 +25,15 @@ Use install_github from the devtools package
     my_grid_map +
      scale_fill_brewer(type='qual') +
      labs(title = 'States by Category', fill = 'Category')
-![](https://raw.github.com/arvi1000/rGridMap/master/example/rGridMap_example.png)
+![](example/rGridMap_example.png)
 
 ### An example with real data
-(See the [examples folder](https://github.com/arvi1000/rGridMap/blob/master/example/senate_debut_example.R) for code)
-![](https://raw.github.com/arvi1000/rGridMap/master/example/senate_debut.png)
+(See the [examples folder](example/senate_debut_example.R) for code)
+![](example/senate_debut.png)
 
+### Dark theme example
 
+Here's an example where we set the state text labels and hex outlines to white (using parameters of `plotGridMap()`), make the plot background black (using standard ggplot parameters to `theme()`), and apply a viridis color scale (using `scale_fill_viridis_c()`, from ggplot).
+
+(See the [examples folder](example/dark_theme_example.R) for code)
+![](example/dark_theme.png)
