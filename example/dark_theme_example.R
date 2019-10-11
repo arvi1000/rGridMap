@@ -10,7 +10,9 @@ my_dat <- data.frame(state.abb = c(state.abb, 'DC'), # don't forget DC!
 
 plotGridMap(my_dat, fill_var = 'value',
             # this turns labels white
-            label_color = 'white') +
+            label_color = 'white',
+            # this turns hex outlines purple
+            outline_color = 'white') +
   scale_fill_viridis_c(option = 'A') +
   labs(title = 'States with Random Value', fill = 'Some Value',
        subtitle = 'black background, white state labels') +
