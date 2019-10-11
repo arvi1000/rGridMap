@@ -8,6 +8,7 @@
 #' @param label_var name of column in \code{x} to use for labels; if NULL, then no labels
 #' @param label_color_var if NULL, then labels have a fixed color (specified by \code{label_color}). Otherwise, name of column in \code{x} to use for label color scale
 #' @param label_color color for label text. Has no effect if you pass a value to \code{label_color_var}
+#' @param outline_color color for state hex outlines
 #'
 #' @import ggplot2
 #'
@@ -33,7 +34,8 @@ plotGridMap <- function(x,
                         fill_var, alpha_var = NULL,
                         label_var = state_var,
                         label_color_var = NULL,
-                        label_color = 'black') {
+                        label_color = 'black',
+                        outline_color = 'black') {
 
   plot_dat <-
     merge.data.frame(x, getStateHexPoly(state_col = state_var), by = state_var)
@@ -46,7 +48,7 @@ plotGridMap <- function(x,
     ggplot2::geom_polygon(data = plot_dat,
                  aes_string(x='draw_x', y='draw_y',
                             group=state_var, fill=fill_var),
-                 color='black') +
+                 color = outline_color) +
     ggplot2::coord_fixed() +
     theme_hexmap()
 
